@@ -125,3 +125,28 @@
     </footer>
 </body>
 </html>
+<div class="box">
+    <h2>Gráfico de Despesas</h2>
+    <canvas id="graficoDespesas" width="400" height="400"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctxDespesas = document.getElementById('graficoDespesas').getContext('2d');
+    var graficoDespesas = new Chart(ctxDespesas, {
+        type: 'pie',
+        data: {
+            labels: ['Alimentação', 'Transporte', 'Lazer', 'Outros'],
+            datasets: [{
+                data: [300, 150, 200, 100],
+                backgroundColor: ['#ff6384', '#ff9f40', '#ffcd56', '#4bc0c0']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+
+
+
